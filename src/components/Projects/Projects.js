@@ -2,12 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import thingiq from "../../Assets/Projects/thingiq.png";
+import magichands from "../../Assets/Projects/magichands.jpeg";
+import checkee from "../../Assets/Projects/checkee.png";
+import driverManager from "../../Assets/Projects/driver-manager.png";
+import hrms from "../../Assets/Projects/mybv.webp";
 
 function Projects() {
   return (
@@ -23,68 +22,77 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={thingiq}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="ThingIQ – IoT Predictive Maintenance"
+              description={[
+                "Cloud-native IoT system for real-time vibration monitoring and AI-based machine failure detection across 100+ devices.",
+                "Designed MQTT ingestion pipeline using AWS IoT Core supporting 5 device types.",
+                "Built event-driven backend with SNS/SQS, hot/cold storage with DynamoDB and S3.",
+                "End-to-end AI training pipeline with SageMaker and Step Functions.",
+                "Implemented Prometheus metrics and Grafana dashboards for observability.",
+              ]}
+              techStack={["Node.js", "AWS IoT Core", "Lambda", "DynamoDB", "SageMaker", "Docker", "Prometheus", "Grafana"]}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={magichands}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="Magichands – On-demand Service Platform"
+              description={[
+                "Scalable on-demand service platform serving thousands of users.",
+                "Reduced API response time by 40% via indexing and Redis caching.",
+                "Integrated secure payment gateways: Momo and VNPay.",
+                "Implemented JWT authentication, OAuth 2.0, and rate limiting.",
+                "Set up CI/CD pipeline using GitHub Actions, deployed on AWS with Docker and PM2.",
+              ]}
+              techStack={["Node.js", "AdonisJS", "MySQL", "Redis", "AWS", "Docker", "ReactJS", "React Native"]}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={driverManager}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="Driver Manager – Fleet Management System"
+              description={[
+                "Fleet management system built with NestJS and PostgreSQL on AWS.",
+                "Optimized PostgreSQL indexing and query performance.",
+                "Implemented secure API authentication with rate limiting.",
+                "Integrated Firebase push notifications for real-time driver updates.",
+              ]}
+              techStack={["NestJS", "PostgreSQL", "AWS", "Firebase"]}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={hrms}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="HRMS Super – HR Management App"
+              description={[
+                "Mobile HR management application for employee management and internal operations.",
+                "Developed ReactJS and React Native UI screens including profile update forms.",
+                "Integrated backend APIs and managed asynchronous state.",
+                "Implemented Axios interceptor to automatically refresh access tokens on expiry.",
+              ]}
+              techStack={["ReactJS", "React Native"]}
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={checkee}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="Checkee – Product Traceability Platform"
+              description={[
+                "Product traceability platform built with ExpressJS and MongoDB.",
+                "Designed MongoDB schema and optimized query performance.",
+                "Built RESTful APIs and refactored backend for maintainability.",
+              ]}
+              techStack={["ExpressJS", "MongoDB"]}
             />
           </Col>
         </Row>

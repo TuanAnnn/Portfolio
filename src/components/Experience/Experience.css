@@ -1,0 +1,149 @@
+.experience-section {
+  position: relative;
+  padding: 80px 0 60px;
+  min-height: 100vh;
+  text-align: left;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0 20px 40px;
+  margin-top: 30px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #c770f0, rgba(199, 112, 240, 0.1));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c770f0;
+  border: 2px solid rgba(199, 112, 240, 0.4);
+  box-shadow: 0 0 8px rgba(199, 112, 240, 0.6);
+}
+
+.timeline-content {
+  background: rgba(199, 112, 240, 0.04);
+  border: 1px solid rgba(199, 112, 240, 0.15);
+  border-radius: 12px;
+  padding: 24px 28px;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.timeline-company {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.timeline-period {
+  font-size: 0.85rem;
+  color: rgba(199, 112, 240, 0.8);
+  background: rgba(199, 112, 240, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(199, 112, 240, 0.25);
+}
+
+.timeline-role {
+  color: #c770f0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.timeline-project {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(199, 112, 240, 0.1);
+}
+
+.timeline-project:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.timeline-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline-project-name {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.timeline-project-period {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.timeline-points {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.timeline-points li {
+  margin-bottom: 4px;
+}
+
+.timeline-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+@media (max-width: 767px) {
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-dot {
+    left: -26px;
+  }
+
+  .timeline-header,
+  .timeline-project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+}
