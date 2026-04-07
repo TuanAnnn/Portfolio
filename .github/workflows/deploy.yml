@@ -56,10 +56,8 @@ jobs:
             set -e
             cd /home/portfolio
 
-            # Write .env.deploy from secrets
-            printf 'VPS_USER=%s\nVPS_HOST=%s\nVPS_PORT=22\nAPP_DIR=/home/portfolio\nAPP_NAME=portfolio\nAPP_PORT=%s\nBRANCH=master\n' \
-              '${{ secrets.VPS_USER }}' '${{ secrets.VPS_HOST }}' '${{ secrets.APP_PORT }}' \
-              > /home/portfolio/.env.deploy
+            # Load env từ file cố định trên server
+            set -a; source /home/portfolio/.env.deploy; set +a
 
             # Install serve if missing
             if ! command -v serve &> /dev/null; then
@@ -72,8 +70,7 @@ jobs:
               pm2 startup systemd -u ${{ secrets.VPS_USER }} --hp /home/${{ secrets.VPS_USER }}
             fi
 
-            # Load env and start/reload
-            set -a; source /home/portfolio/.env.deploy; set +a
+            # Start or reload
             if pm2 list | grep -q "portfolio"; then
               pm2 reload ecosystem.config.js --update-env --env production
             else
