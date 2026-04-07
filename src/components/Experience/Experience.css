@@ -54,6 +54,21 @@
   margin-bottom: 6px;
 }
 
+.timeline-company-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-company-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(199, 112, 240, 0.3);
+  flex-shrink: 0;
+}
+
 .timeline-company {
   color: white;
   font-size: 1.3rem;
@@ -103,6 +118,18 @@
   color: white;
   font-weight: 600;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-project-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(199, 112, 240, 0.3);
 }
 
 .timeline-project-period {

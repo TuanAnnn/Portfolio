@@ -1,15 +1,25 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Particle from "../Particle";
+import iesLogo from "../../Assets/Projects/ies-logo.png";
+import datVietLogo from "../../Assets/Projects/default-company-logo.jpg";
+import banVienLogo from "../../Assets/Projects/banvien-logo.png";
+import thingiq from "../../Assets/Projects/thingiq.png";
+import magichands from "../../Assets/Projects/magichands.jpeg";
+import driverManager from "../../Assets/Projects/driver-manager.png";
+import checkee from "../../Assets/Projects/checkee.png";
+import mybv from "../../Assets/Projects/mybv.webp";
 import "./Experience.css";
 
 const experiences = [
   {
+    logo: iesLogo,
     company: "IES Limited",
     period: "07/2023 – Present",
     roles: "Fullstack Engineer → Technical Leader",
     projects: [
       {
+        icon: thingiq,
         name: "ThingIQ – IoT Predictive Maintenance Platform",
         period: "Jun 2025 – Present",
         points: [
@@ -23,6 +33,7 @@ const experiences = [
         tech: ["Node.js", "AWS IoT Core", "Lambda", "DynamoDB", "SageMaker", "Step Functions", "Prometheus", "Grafana", "Docker"],
       },
       {
+        icon: magichands,
         name: "Magichands – On-demand Service Platform",
         period: "Sep 2023 – Present",
         points: [
@@ -35,6 +46,7 @@ const experiences = [
         tech: ["Node.js", "AdonisJS", "MySQL", "Redis", "AWS", "Docker", "ReactJS", "React Native", "Firebase"],
       },
       {
+        icon: driverManager,
         name: "Driver Manager – Fleet Management System",
         period: "Jul 2023 – Jan 2024",
         points: [
@@ -43,16 +55,18 @@ const experiences = [
           "Implemented secure API authentication and rate limiting.",
           "Integrated Firebase push notifications.",
         ],
-        tech: ["NestJS", "PostgreSQL", "AWS", "Firebase"],
+        tech: ["NestJS", "PostgreSQL", "AWS", "Firebase", "Next.js", "ReactJS", "React Native"],
       },
     ],
   },
   {
+    logo: datVietLogo,
     company: "DatViet Software",
     period: "02/2023 – 07/2023",
     roles: "FullStack Developer",
     projects: [
       {
+        icon: checkee,
         name: "Checkee – Product Traceability Platform",
         period: "02/2023 – 07/2023",
         points: [
@@ -60,24 +74,26 @@ const experiences = [
           "Designed MongoDB schema and optimized query performance.",
           "Refactored backend code to improve maintainability.",
         ],
-        tech: ["ExpressJS", "MongoDB"],
+        tech: ["ExpressJS", "MongoDB", "React Native", "Redux Thunk", "Axios", "TailwindCSS", "NativeBase"],
       },
     ],
   },
   {
+    logo: banVienLogo,
     company: "Ban Vien Co., LTD",
     period: "07/2022 – 01/2023",
     roles: "Frontend Developer",
     projects: [
       {
-        name: "Frontend Development",
+        icon: mybv,
+        name: "HRMS Super – HR Management App",
         period: "07/2022 – 01/2023",
         points: [
-          "Developed ReactJS and React Native applications.",
+          "Developed ReactJS and React Native UI screens including profile update forms.",
           "Integrated backend APIs and managed asynchronous state.",
           "Implemented Axios interceptor to automatically refresh access tokens on expiry.",
         ],
-        tech: ["ReactJS", "React Native"],
+        tech: ["ReactJS", "React Native", "Redux Observable", "Axios"],
       },
     ],
   },
@@ -97,7 +113,12 @@ function Experience() {
               <div className="timeline-dot" />
               <div className="timeline-content">
                 <div className="timeline-header">
-                  <h3 className="timeline-company">{exp.company}</h3>
+                  <div className="timeline-company-info">
+                    {exp.logo && (
+                      <img src={exp.logo} alt={exp.company} className="timeline-company-logo" />
+                    )}
+                    <h3 className="timeline-company">{exp.company}</h3>
+                  </div>
                   <span className="timeline-period">{exp.period}</span>
                 </div>
                 <p className="timeline-role">{exp.roles}</p>
@@ -105,9 +126,25 @@ function Experience() {
                 {exp.projects.map((proj, j) => (
                   <div key={j} className="timeline-project">
                     <div className="timeline-project-header">
-                      <span className="timeline-project-name">{proj.name}</span>
+                      <span className="timeline-project-name">
+                        {proj.icon && (
+                          <img
+                            src={proj.icon}
+                            alt={proj.name}
+                            className="timeline-project-icon"
+                          />
+                        )}
+                        {proj.name}
+                      </span>
                       <span className="timeline-project-period">{proj.period}</span>
                     </div>
+                    {proj.image && (
+                      <img
+                        src={proj.image}
+                        alt={proj.name}
+                        style={{ width: "100%", maxHeight: "160px", objectFit: "cover", borderRadius: "8px", marginBottom: "12px" }}
+                      />
+                    )}
                     <ul className="timeline-points">
                       {proj.points.map((point, k) => (
                         <li key={k}>{point}</li>
