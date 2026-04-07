@@ -31,7 +31,7 @@ jobs:
         with:
           switches: -avz --delete
           path: build/
-          remote_path: /root/portfolio/build/
+          remote_path: /home/portfolio/build/
           remote_host: ${{ secrets.VPS_HOST }}
           remote_user: ${{ secrets.VPS_USER }}
           remote_key: ${{ secrets.VPS_SSH_KEY }}
@@ -41,7 +41,7 @@ jobs:
         with:
           switches: -avz
           path: ecosystem.config.js
-          remote_path: /root/portfolio/
+          remote_path: /home/portfolio/
           remote_host: ${{ secrets.VPS_HOST }}
           remote_user: ${{ secrets.VPS_USER }}
           remote_key: ${{ secrets.VPS_SSH_KEY }}
@@ -54,7 +54,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             set -e
-            cd /root/portfolio
+            cd /home/portfolio
 
             # Install serve if missing
             if ! command -v serve &> /dev/null; then
@@ -68,8 +68,11 @@ jobs:
             fi
 
             # Start or reload
+            export APP_PORT=${{ secrets.APP_PORT }}
+            export APP_DIR=/home/portfolio
+            export APP_NAME=portfolio
             if pm2 list | grep -q "portfolio"; then
-              pm2 reload ecosystem.config.js --env production
+              pm2 reload ecosystem.config.js --update-env --env production
             else
               pm2 start ecosystem.config.js --env production
             fi

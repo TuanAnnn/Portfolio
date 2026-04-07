@@ -2,7 +2,7 @@ const {
   VPS_USER = 'ubuntu',
   VPS_HOST = '',
   VPS_PORT = '22',
-  APP_DIR = '/var/www/portfolio',
+  APP_DIR = '/home/portfolio',
   APP_NAME = 'portfolio',
   APP_PORT = '3000',
   BRANCH = 'master',
