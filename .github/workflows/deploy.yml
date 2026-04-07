@@ -56,6 +56,17 @@ jobs:
             set -e
             cd /home/portfolio
 
+            # Write .env.deploy from secrets
+            cat > /home/portfolio/.env.deploy << 'ENVEOF'
+            VPS_USER=${{ secrets.VPS_USER }}
+            VPS_HOST=${{ secrets.VPS_HOST }}
+            VPS_PORT=22
+            APP_DIR=/home/portfolio
+            APP_NAME=portfolio
+            APP_PORT=${{ secrets.APP_PORT }}
+            BRANCH=master
+            ENVEOF
+
             # Install serve if missing
             if ! command -v serve &> /dev/null; then
               npm install -g serve
@@ -67,10 +78,8 @@ jobs:
               pm2 startup systemd -u ${{ secrets.VPS_USER }} --hp /home/${{ secrets.VPS_USER }}
             fi
 
-            # Start or reload
-            export APP_PORT=${{ secrets.APP_PORT }}
-            export APP_DIR=/home/portfolio
-            export APP_NAME=portfolio
+            # Load env and start/reload
+            set -a; source /home/portfolio/.env.deploy; set +a
             if pm2 list | grep -q "portfolio"; then
               pm2 reload ecosystem.config.js --update-env --env production
             else

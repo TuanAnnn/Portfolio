@@ -1,10 +1,25 @@
+const fs = require('fs');
+const path = require('path');
+
+// Load .env.deploy nếu tồn tại
+const envFile = path.join(__dirname, '.env.deploy');
+if (fs.existsSync(envFile)) {
+  fs.readFileSync(envFile, 'utf-8')
+    .split('\n')
+    .filter((line) => line.trim() && !line.startsWith('#'))
+    .forEach((line) => {
+      const [key, ...rest] = line.split('=');
+      if (key && rest.length) process.env[key.trim()] = rest.join('=').trim();
+    });
+}
+
 const {
-  VPS_USER = 'ubuntu',
+  VPS_USER = 'root',
   VPS_HOST = '',
   VPS_PORT = '22',
   APP_DIR = '/home/portfolio',
   APP_NAME = 'portfolio',
-  APP_PORT = '3000',
+  APP_PORT = '3036',
   BRANCH = 'master',
   GH_REPO = '',
 } = process.env;
