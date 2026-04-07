@@ -57,15 +57,9 @@ jobs:
             cd /home/portfolio
 
             # Write .env.deploy from secrets
-            cat > /home/portfolio/.env.deploy << 'ENVEOF'
-            VPS_USER=${{ secrets.VPS_USER }}
-            VPS_HOST=${{ secrets.VPS_HOST }}
-            VPS_PORT=22
-            APP_DIR=/home/portfolio
-            APP_NAME=portfolio
-            APP_PORT=${{ secrets.APP_PORT }}
-            BRANCH=master
-            ENVEOF
+            printf 'VPS_USER=%s\nVPS_HOST=%s\nVPS_PORT=22\nAPP_DIR=/home/portfolio\nAPP_NAME=portfolio\nAPP_PORT=%s\nBRANCH=master\n' \
+              '${{ secrets.VPS_USER }}' '${{ secrets.VPS_HOST }}' '${{ secrets.APP_PORT }}' \
+              > /home/portfolio/.env.deploy
 
             # Install serve if missing
             if ! command -v serve &> /dev/null; then
