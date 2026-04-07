@@ -6,6 +6,7 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import ZaloIcon from "../ZaloIcon";
 
 function Home() {
   return (
@@ -79,6 +80,16 @@ function Home() {
                   className="icon-colour home-social-icons"
                 >
                   <AiOutlineMail />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://zalo.me/0866053178"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                >
+                  <ZaloIcon size="0.9em" />
                 </a>
               </li>
             </ul>

@@ -15,13 +15,13 @@ const experiences = [
   {
     logo: iesLogo,
     company: "IES Limited",
-    period: "07/2023 – Present",
-    roles: "Fullstack Engineer → Technical Leader",
+    period: "05/2023 – Present",
+    roles: "Fullstack Engineer (05/2023 – 07/2025) → Technical Leader (08/2025 – Present)",
     projects: [
       {
         icon: thingiq,
         name: "ThingIQ BFF – IoT Backend-for-Frontend Platform",
-        period: "Jun 2025 – Present",
+        period: "06/2025 – Present",
         points: [
           "Promoted to Technical Leader, overseeing a team of 8 engineers.",
           "Designed MQTT ingestion pipeline using AWS IoT Core for 100+ devices across 5 device types.",
@@ -35,7 +35,7 @@ const experiences = [
       {
         icon: magichands,
         name: "Magichands – On-demand Service Platform",
-        period: "Sep 2023 – Present",
+        period: "09/2023 – Present",
         points: [
           "Architected backend with Layered Architecture: Middleware → Controllers → Services → Models via Lucid ORM (MySQL, Soft Deletes, ULID).",
           "Designed and developed scalable RESTful APIs serving thousands of users.",
@@ -51,7 +51,7 @@ const experiences = [
       {
         icon: driverManager,
         name: "Driver Manager – Fleet Management System",
-        period: "Jul 2023 – Jan 2024",
+        period: "05/2023 – 01/2024",
         points: [
           "Developed backend services using NestJS.",
           "Optimized PostgreSQL indexing and query performance.",
@@ -65,13 +65,13 @@ const experiences = [
   {
     logo: datVietLogo,
     company: "DatViet Software",
-    period: "02/2023 – 07/2023",
+    period: "02/2023 – 05/2023",
     roles: "FullStack Developer",
     projects: [
       {
         icon: checkee,
         name: "Checkee – Product Traceability Platform",
-        period: "02/2023 – 07/2023",
+        period: "02/2023 – 05/2023",
         points: [
           "Built RESTful APIs using ExpressJS.",
           "Designed MongoDB schema and optimized query performance.",
@@ -84,13 +84,13 @@ const experiences = [
   {
     logo: banVienLogo,
     company: "Ban Vien Co., LTD",
-    period: "07/2022 – 01/2023",
+    period: "03/2022 – 02/2023",
     roles: "Frontend Developer",
     projects: [
       {
         icon: mybv,
         name: "HRMS Super – HR Management App",
-        period: "07/2022 – 01/2023",
+        period: "03/2022 – 02/2023",
         points: [
           "Developed ReactJS and React Native UI screens including profile update forms.",
           "Integrated backend APIs and managed asynchronous state.",
