@@ -14,7 +14,7 @@ import "./Experience.css";
 const experiences = [
   {
     logo: iesLogo,
-    company: "IES Limited",
+    company: "IES Joint Stock Company",
     period: "05/2023 – Present",
     roles: "Fullstack Engineer (05/2023 – 07/2025) → Technical Leader (08/2025 – Present)",
     projects: [
