@@ -1,0 +1,77 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Copy build to VPS via rsync
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avz --delete
+          path: build/
+          remote_path: /var/www/portfolio/build/
+          remote_host: ${{ secrets.VPS_HOST }}
+          remote_user: ${{ secrets.VPS_USER }}
+          remote_key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Copy PM2 config to VPS
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avz
+          path: ecosystem.config.js
+          remote_path: /var/www/portfolio/
+          remote_host: ${{ secrets.VPS_HOST }}
+          remote_user: ${{ secrets.VPS_USER }}
+          remote_key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Reload PM2 on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/portfolio
+
+            # Install serve if missing
+            if ! command -v serve &> /dev/null; then
+              npm install -g serve
+            fi
+
+            # Install PM2 if missing
+            if ! command -v pm2 &> /dev/null; then
+              npm install -g pm2
+              pm2 startup systemd -u ${{ secrets.VPS_USER }} --hp /home/${{ secrets.VPS_USER }}
+            fi
+
+            # Start or reload
+            if pm2 list | grep -q "portfolio"; then
+              pm2 reload ecosystem.config.js --env production
+            else
+              pm2 start ecosystem.config.js --env production
+            fi
+
+            pm2 save
