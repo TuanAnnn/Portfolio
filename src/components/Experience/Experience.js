@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; // eslint-disable-line no-unused-vars
 import { Container } from "react-bootstrap";
 import Particle from "../Particle";
 import iesLogo from "../../Assets/Projects/ies-logo.png";
@@ -20,7 +20,7 @@ const experiences = [
     projects: [
       {
         icon: thingiq,
-        name: "ThingIQ – IoT Predictive Maintenance Platform",
+        name: "ThingIQ BFF – IoT Backend-for-Frontend Platform",
         period: "Jun 2025 – Present",
         points: [
           "Promoted to Technical Leader, overseeing a team of 8 engineers.",
@@ -30,20 +30,23 @@ const experiences = [
           "Implemented Prometheus metrics and Grafana dashboards for observability.",
           "Built TCP socket server to parse real-time device data using Wialon IPS protocol.",
         ],
-        tech: ["Node.js", "AWS IoT Core", "Lambda", "DynamoDB", "SageMaker", "Step Functions", "Prometheus", "Grafana", "Docker"],
+        tech: ["AdonisJS 5", "TypeScript", "MySQL", "DynamoDB", "Redis", "Bull Queue", "AWS IoT Core", "SQS", "SNS", "S3", "SageMaker", "CloudWatch", "MQTT", "Socket.io", "Firebase", "Prometheus", "Grafana"],
       },
       {
         icon: magichands,
         name: "Magichands – On-demand Service Platform",
         period: "Sep 2023 – Present",
         points: [
+          "Architected backend with Layered Architecture: Middleware → Controllers → Services → Models via Lucid ORM (MySQL, Soft Deletes, ULID).",
           "Designed and developed scalable RESTful APIs serving thousands of users.",
-          "Reduced API response time by 40% via indexing and Redis caching.",
-          "Integrated secure payment gateways: Momo and VNPay.",
-          "Implemented JWT authentication, OAuth 2.0, and rate limiting.",
-          "Set up CI/CD pipeline using GitHub Actions, deployed on AWS with Docker and PM2.",
+          "Reduced API response time by 40% via MySQL indexing (Lucid ORM) and Redis + Bull Queue caching.",
+          "Integrated payment gateways Momo and VNPay, and social login via Ally (OAuth).",
+          "Implemented JWT authentication, rate limiting, and multi-language support (i18n).",
+          "Integrated Firebase FCM notifications and third-party services: Google Maps, Slack, Zalo, SMS.",
+          "Managed file storage on AWS S3 and session/queue management with Redis.",
+          "Owned release management and server operations: wrote deployment scripts, managed AWS EC2 instances, and maintained CI/CD pipeline via GitHub Actions with PM2.",
         ],
-        tech: ["Node.js", "AdonisJS", "MySQL", "Redis", "AWS", "Docker", "ReactJS", "React Native", "Firebase"],
+        tech: ["AdonisJS 5", "TypeScript", "MySQL", "DynamoDB", "Redis", "Bull Queue", "AWS S3", "JWT", "Firebase FCM", "Momo", "VNPay", "Google Maps", "Docker", "ReactJS", "React Native"],
       },
       {
         icon: driverManager,
