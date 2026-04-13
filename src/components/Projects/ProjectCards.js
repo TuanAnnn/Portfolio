@@ -145,12 +145,6 @@ const thumbImg = {
   transition: "opacity 0.15s",
 };
 
-const moreOverlay = {
-  position: "absolute", inset: 0,
-  background: "rgba(0,0,0,0.6)",
-  color: "#fff", fontSize: 14, fontWeight: 700,
-  display: "flex", alignItems: "center", justifyContent: "center",
-};
 
 const overlayStyle = {
   position: "fixed", inset: 0, zIndex: 9999,
