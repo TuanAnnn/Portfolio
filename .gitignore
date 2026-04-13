@@ -28,3 +28,8 @@ yarn-error.log*
 
 Server/node_modules
 Server/config.js
+
+# Sensitive screenshots (hosted on Cloudinary)
+src/Assets/Projects/thingiq/
+src/Assets/Projects/magichands/
+src/Assets/Projects/MyBv/

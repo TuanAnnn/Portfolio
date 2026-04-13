@@ -4,9 +4,26 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import thingiq from "../../Assets/Projects/thingiq.png";
 import magichands from "../../Assets/Projects/magichands.jpeg";
-import checkee from "../../Assets/Projects/checkee.png";
-import driverManager from "../../Assets/Projects/driver-manager.png";
 import hrms from "../../Assets/Projects/mybv.webp";
+
+const thingiq1 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703634/portfolio/thingiq/thingiq-1_iathiu.png";
+const thingiq2 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703632/portfolio/thingiq/thingiq-2_i2u1lv.png";
+const thingiq3 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703631/portfolio/thingiq/thingiq-3_yntl7l.png";
+const thingiq4 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703634/portfolio/thingiq/thingiq-4_sbhh6i.png";
+const thingiq5 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703633/portfolio/thingiq/thingiq-5_czgxye.png";
+const thingiq6 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703820/portfolio/thingiq/thingiq-6_g7yypa.png";
+const thingiqArch = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703789/portfolio/thingiq/thingiq-architecture_b2pkvt.png";
+
+const magichandsArch = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703705/portfolio/magichands/System_Archietect.drawio_chlve2.png";
+const magichands1 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703706/portfolio/magichands/magichands-screenshot_byrzsq.webp";
+const magichands2 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703710/portfolio/magichands/magichands-screenshot-2_mw8igw.webp";
+const magichands3 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703708/portfolio/magichands/magichands-screenshot-3_eu3h31.webp";
+const magichands4 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703712/portfolio/magichands/magichands-screenshot-4_gwlviq.webp";
+const magichands5 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703711/portfolio/magichands/magichands-screenshot-5_emrfgi.webp";
+
+const mybv1 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703714/portfolio/myBv/mybv-1_aab4jo.webp";
+const mybv2 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703717/portfolio/myBv/mybv-2_j0eqb5.webp";
+const mybv3 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703716/portfolio/myBv/mybv-3_rqy76l.webp";
 
 function Projects() {
   return (
@@ -19,10 +36,19 @@ function Projects() {
         <p style={{ color: "white" }}>
           Here are a few projects I've worked on recently.
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+        <Row style={{ justifyContent: "center", paddingBottom: "10px", columnGap: "30px" }} className="g-4">
+          <Col md={5} className="project-card">
             <ProjectCard
               imgPath={thingiq}
+              architecture={thingiqArch}
+              screenshots={[
+                { src: thingiq1, label: "Screenshot 1" },
+                { src: thingiq2, label: "Screenshot 2" },
+                { src: thingiq3, label: "Screenshot 3" },
+                { src: thingiq4, label: "Screenshot 4" },
+                { src: thingiq5, label: "Screenshot 5" },
+                { src: thingiq6, label: "Screenshot 6" },
+              ]}
               isBlog={false}
               title="ThingIQ BFF – IoT Backend-for-Frontend Platform"
               description={[
@@ -37,9 +63,17 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={5} className="project-card">
             <ProjectCard
               imgPath={magichands}
+              architecture={magichandsArch}
+              screenshots={[
+                { src: magichands1, label: "Screenshot 1" },
+                { src: magichands2, label: "Screenshot 2" },
+                { src: magichands3, label: "Screenshot 3" },
+                { src: magichands4, label: "Screenshot 4" },
+                { src: magichands5, label: "Screenshot 5" },
+              ]}
               isBlog={false}
               title="Magichands – On-demand Service Platform"
               description={[
@@ -56,40 +90,27 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          {/* Placeholder — thêm sau */}
+          <Col md={5} className="project-card">
             <ProjectCard
-              imgPath={driverManager}
+              imgPath={null}
               isBlog={false}
-              title="Driver Manager – Fleet Management System"
-              description={[
-                "Fleet management system built with NestJS and PostgreSQL on AWS.",
-                "Optimized PostgreSQL indexing and query performance.",
-                "Implemented secure API authentication with rate limiting.",
-                "Integrated Firebase push notifications for real-time driver updates.",
-              ]}
-              techStack={["NestJS", "PostgreSQL", "AWS", "Firebase", "Next.js", "ReactJS", "React Native"]}
+              title="Coming Soon"
+              description={["New project coming soon..."]}
+              techStack={[]}
             />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={checkee}
-              isBlog={false}
-              title="Checkee – Product Traceability Platform"
-              description={[
-                "Product traceability platform built with ExpressJS and MongoDB.",
-                "Designed MongoDB schema and optimized query performance.",
-                "Built RESTful APIs and refactored backend for maintainability.",
-              ]}
-              techStack={["ExpressJS", "MongoDB", "React Native", "Redux Thunk", "Axios", "TailwindCSS", "NativeBase"]}
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
+          <Col md={5} className="project-card">
             <ProjectCard
               imgPath={hrms}
+              screenshots={[
+                { src: mybv1, label: "Screenshot 1" },
+                { src: mybv2, label: "Screenshot 2" },
+                { src: mybv3, label: "Screenshot 3" },
+              ]}
               isBlog={false}
-              title="HRMS Super – HR Management App"
+              title="myBv – HR Management App"
               description={[
                 "Mobile HR management application for employee management and internal operations.",
                 "Developed ReactJS and React Native UI screens including profile update forms.",
