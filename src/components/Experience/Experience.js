@@ -16,14 +16,14 @@ const experiences = [
     logo: iesLogo,
     company: "IES Joint Stock Company",
     period: "05/2023 – Present",
-    roles: "Fullstack Engineer (05/2023 – 07/2025) → Technical Leader (08/2025 – Present)",
+    roles: "Software Engineer (05/2023 – 07/2025) → Associate Technical Leader (08/2025 – Present)",
     projects: [
       {
         icon: thingiq,
         name: "ThingIQ BFF – IoT Backend-for-Frontend Platform",
         period: "06/2025 – Present",
         points: [
-          "Promoted to Technical Leader, overseeing a team of 8 engineers.",
+          "Promoted to Associate Technical Leader, overseeing a team of 8 engineers.",
           "Designed MQTT ingestion pipeline using AWS IoT Core for 100+ devices across 5 device types.",
           "Built event-driven backend with SNS/SQS, hot/cold storage with DynamoDB and S3.",
           "End-to-end AI training pipeline with SageMaker and Step Functions.",
@@ -66,7 +66,7 @@ const experiences = [
     logo: datVietLogo,
     company: "DatViet Software",
     period: "02/2023 – 05/2023",
-    roles: "FullStack Developer",
+    roles: "Software Engineer",
     projects: [
       {
         icon: checkee,
@@ -85,7 +85,7 @@ const experiences = [
     logo: banVienLogo,
     company: "Ban Vien Co., LTD",
     period: "03/2022 – 02/2023",
-    roles: "Frontend Developer",
+    roles: "Mobile Application Developer",
     projects: [
       {
         icon: mybv,

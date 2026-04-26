@@ -1,5 +1,5 @@
 import React from "react";
-import { SiNestjs, SiAdonisjs, SiExpress, SiMysql, SiSocketdotio, SiGithubactions, SiPrometheus, SiGrafana } from "react-icons/si";
+import { SiNestjs, SiAdonisjs, SiExpress, SiMysql, SiSocketdotio, SiGithubactions, SiPrometheus, SiGrafana, SiTerraform } from "react-icons/si";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
 import Node from "../../Assets/TechIcons/Node.svg";
 import ReactIcon from "../../Assets/TechIcons/React.svg";
@@ -52,6 +52,7 @@ const categories = [
     skills: [
       { icon: <img src={AWS} alt="aws" className="tech-icon-images" />, name: "AWS" },
       { icon: <img src={Docker} alt="docker" />, name: "Docker" },
+      { icon: <SiTerraform fontSize={"22px"} />, name: "Terraform" },
       { icon: <SiGithubactions fontSize={"22px"} />, name: "GitHub Actions" },
       { icon: <img src={Git} alt="git" />, name: "Git" },
     ],

@@ -13,7 +13,7 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              Fullstack Engineer with nearly 4 years of experience building
+              Software Engineer with nearly 4 years of experience building
               scalable cloud-native systems on AWS. Strong background in
               distributed architecture, real-time IoT data streaming, and
               production-grade API development.

@@ -53,14 +53,14 @@ function Projects() {
               isBlog={false}
               title="ThingIQ BFF – IoT Backend-for-Frontend Platform"
               description={[
-                "Promoted to Technical Leader, overseeing a team of 8 engineers.",
+                "Promoted to Associate Technical Leader, overseeing a team of 8 engineers.",
                 "Designed MQTT ingestion pipeline using AWS IoT Core for 100+ devices across 5 device types.",
                 "Built event-driven backend with SNS/SQS, hot/cold storage with DynamoDB and S3.",
                 "End-to-end AI training pipeline with SageMaker and Step Functions.",
                 "Implemented Prometheus metrics and Grafana dashboards for observability.",
                 "Built TCP socket server to parse real-time device data using Wialon IPS protocol.",
               ]}
-              techStack={["AdonisJS 5", "TypeScript", "MySQL", "DynamoDB", "Redis", "Bull Queue", "AWS IoT Core", "SQS", "SNS", "S3", "SageMaker", "CloudWatch", "MQTT", "Socket.io", "Firebase", "Prometheus", "Grafana"]}
+              techStack={["AdonisJS 5", "TypeScript", "MySQL", "DynamoDB", "Redis", "Bull Queue", "AWS IoT Core", "SQS", "SNS", "S3", "SageMaker", "CloudWatch", "MQTT", "Socket.io", "Firebase", "Prometheus", "Grafana", "Terraform"]}
             />
           </Col>
 

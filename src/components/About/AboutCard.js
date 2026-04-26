@@ -12,7 +12,7 @@ function AboutCard() {
             from <span className="purple">Ho Chi Minh City, Vietnam</span>.
             <br />
             I’m currently working as a{" "}
-            <span className="purple">Technical Leader</span> at{" "}
+            <span className="purple">Associate Technical Leader</span> at{" "}
             <span className="purple">IES Joint Stock Company</span>.
             <br />I hold a Bachelor’s degree from{" "}
             <span className="purple">University of Science (HCMUS)</span>.
