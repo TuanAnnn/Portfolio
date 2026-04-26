@@ -23,7 +23,12 @@ const experiences = [
         name: "ThingIQ BFF – IoT Backend-for-Frontend Platform",
         period: "06/2025 – Present",
         points: [
-          "Promoted to Associate Technical Leader, overseeing a team of 8 engineers.",
+          "Promoted to Associate Technical Leader, overseeing a team of 8 engineers. Balancing technical leadership with hands-on engineering to drive team delivery and system scalability.",
+          "Agile Leadership: Implemented Agile/Scrum methodologies to manage team sprints, allocate tasks, and streamline productivity.",
+          "Stakeholder Collaboration: Collaborated directly with Product Owners (PO) to refine requirements and provided regular progress reports to the Technical Lead.",
+          "Architecture Design: Designed and implemented Event-Driven Architecture to enhance system decoupling and support large-scale scalability.",
+          "Hands-on Development: Maintained 80% coding contribution on critical modules while leading team meetings and technical decision-making.",
+          "Technical Oversight: Performed final code reviews and architectural audits to ensure robust and reliable system integration.",
           "Designed MQTT ingestion pipeline using AWS IoT Core for 100+ devices across 5 device types.",
           "Built event-driven backend with SNS/SQS, hot/cold storage with DynamoDB and S3.",
           "End-to-end AI training pipeline with SageMaker and Step Functions.",
