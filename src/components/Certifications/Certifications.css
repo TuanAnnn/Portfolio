@@ -1,0 +1,107 @@
+.cert-section {
+  min-height: 100vh;
+  padding: 80px 0 50px;
+  position: relative;
+  text-align: left;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+
+.cert-card:hover {
+  border-color: rgba(199, 112, 240, 0.5);
+  box-shadow: 0 4px 20px rgba(199, 112, 240, 0.1);
+}
+
+/* Row: logo + text */
+.cert-card-body {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.cert-logo-wrap {
+  width: 56px;
+  height: 56px;
+  background: #f3f2f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+}
+
+.cert-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cert-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.cert-meta {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Skills */
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Button row */
+.cert-actions {
+  display: flex;
+}
+
+.cert-verify-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.cert-verify-btn:hover {
+  border-color: white;
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}

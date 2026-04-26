@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import thingiq from "../../Assets/Projects/thingiq.png";
 import magichands from "../../Assets/Projects/magichands.jpeg";
+import driverManager from "../../Assets/Projects/driver-manager.png";
 import hrms from "../../Assets/Projects/mybv.webp";
 
 const thingiq1 = "https://res.cloudinary.com/dneyrahbx/image/upload/v1775703634/portfolio/thingiq/thingiq-1_iathiu.png";
@@ -91,13 +92,28 @@ function Projects() {
           </Col>
 
           {/* Placeholder — thêm sau */}
-          <Col md={5} className="project-card">
+          {/* <Col md={5} className="project-card">
             <ProjectCard
               imgPath={null}
               isBlog={false}
               title="Coming Soon"
               description={["New project coming soon..."]}
               techStack={[]}
+            />
+          </Col> */}
+
+          <Col md={5} className="project-card">
+            <ProjectCard
+              imgPath={driverManager}
+              isBlog={false}
+              title="Driver Manager – Fleet Management System"
+              description={[
+                "Developed backend services using NestJS.",
+                "Optimized PostgreSQL indexing and query performance.",
+                "Implemented secure API authentication and rate limiting.",
+                "Integrated Firebase push notifications.",
+              ]}
+              techStack={["NestJS", "PostgreSQL", "AWS", "Firebase", "Next.js", "ReactJS", "React Native"]}
             />
           </Col>
 
